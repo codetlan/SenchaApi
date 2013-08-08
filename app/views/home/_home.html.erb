@@ -1,0 +1,29 @@
+<div class="row">
+	<div class="span3">
+		<br>
+		<br>
+		<br>
+		<br>
+		<%= image_tag("sencha.png", :alt => "") %>
+	</div>
+	<div class="span1"></div>
+	<div class="span8">
+		<h1 class="title"> ExtJS y Sencha Touch 2 con un API</h1>
+		<div class="slogan"> ( Olvida el back-end )</div>
+		<div class="content">
+			<p>Este es un proyecto enfocado en el aprendizaje de tecnologías Sencha. Aquí encontraras un API que te ayudará a aprender ExtJS y Sencha Touch.  Tu solo tendrás que enfocarte en aprender a usar las librerías.</p>
+			<span>En este API encontraras  los siguientes módulos:</span><br>
+			<ul class="modulos">
+				<li>Registro de usuarios</li>
+				<li>Modulo de tareas pendientes</li>
+				<li>Modulo de Almacén</li>
+			</ul>
+			<br>
+			<p>Crea tu cuenta y empieza a utilizar nuestros servicios es gratis! </p>
+			<div class="botones">
+				<%= link_to "Entrar", new_user_session_path, :class => "btn btn-primary btn-large" %>
+				<%= link_to "Registrarse", new_user_registration_path, :class => "btn btn-primary btn-large" %>
+			</div>
+		</div>
+	</div>
+</div>

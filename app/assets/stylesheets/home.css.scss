@@ -1,3 +1,39 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body{
+	margin-top:60px;
+	// background: url('http://cdn.sencha.io/img/home/december-2012/20121218-bg.jpg');
+	background:#085C88;
+	color:#FFF;
+}
+footer{
+	margin-top:50px;
+	p{
+		text-align: center;
+	}
+}
+.title{
+	text-align:center;
+}
+.slogan{
+	font-size:20px;
+	text-align:center;
+	font-family: "klavika-web",sans-serif;
+}
+.content{
+	color: white;
+	font-size: 24px;
+	float: left;
+	margin: 45px 0px 0px 10px;
+	text-shadow: none;
+	line-height: 1.3em;
+	float: left;
+	font-family: "klavika-web",sans-serif;
+	font-weight: 200 !important;
+}
+.modulos{
+	li{
+		margin-top: 10px;
+	}
+}
