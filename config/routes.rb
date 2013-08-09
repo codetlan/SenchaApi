@@ -57,9 +57,18 @@ SenchaApi::Application.routes.draw do
   # just remember to delete public/index.html.
   root :to => 'home#index'
 
-  # See how all your routes lay out with "rake routes"
 
-  # This is a legacy wild controller route that's not recommended for RESTful applications.
-  # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id))(.:format)'
+   # api para la mobile
+   #this is for api for the mobile app
+  namespace :api do
+    resources :tokens,:only => [:create, :destroy]
+  end
+  match '/api/tokens/create', :to => 'api/tokens#create', :as => :login
+  
+  match '/api/api/publications', :to => 'api/api#publications', :as => :publicationsjson
+  match '/api/api/comments', :to => 'api/api#comments', :as => :commentsjson
+  match '/api/api/courses', :to => 'api/api#courses', :as => :coursesjson
+  match '/api/api/users', :to => 'api/api#users', :as => :usersjson
+  match '/api/api/notifications', :to => 'api/api#notifications', :as => :notificationsjson
+  match '/api/api/create_comment', :to => 'api/api#create_comment', :as => :create_comment
 end
