@@ -65,10 +65,13 @@ SenchaApi::Application.routes.draw do
   end
   match '/api/tokens/create', :to => 'api/tokens#create', :as => :login
   
-  match '/api/api/publications', :to => 'api/api#publications', :as => :publicationsjson
-  match '/api/api/comments', :to => 'api/api#comments', :as => :commentsjson
-  match '/api/api/courses', :to => 'api/api#courses', :as => :coursesjson
-  match '/api/api/users', :to => 'api/api#users', :as => :usersjson
-  match '/api/api/notifications', :to => 'api/api#notifications', :as => :notificationsjson
-  match '/api/api/create_comment', :to => 'api/api#create_comment', :as => :create_comment
+  match '/api/api/list_todos', :to => 'api/api#list_todos', :as => :list_todos_json
+  match '/api/api/add_todo', :to => 'api/api#add_todo', :as => :add_todo_json
+  match '/api/api/delete_todo', :to => 'api/api#delete_todo', :as => :delete_todo_json
+
+  # match '/api/api/comments', :to => 'api/api#comments', :as => :commentsjson
+  # match '/api/api/courses', :to => 'api/api#courses', :as => :coursesjson
+  # match '/api/api/users', :to => 'api/api#users', :as => :usersjson
+  # match '/api/api/notifications', :to => 'api/api#notifications', :as => :notificationsjson
+  # match '/api/api/create_comment', :to => 'api/api#create_comment', :as => :create_comment
 end
