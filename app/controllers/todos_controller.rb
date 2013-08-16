@@ -1,8 +1,9 @@
 class TodosController < ApplicationController
   # GET /todos
   # GET /todos.json
+  before_filter :authenticate_user!
   def index
-    @todos = Todo.all
+    @todos = current_user.todos
 
     respond_to do |format|
       format.html # index.html.erb
@@ -15,10 +16,15 @@ class TodosController < ApplicationController
   def show
     @todo = Todo.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @todo }
+    if @todo.user.id == current_user.id
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: @todo }
+      end
+    else
+      redirect_to root_path
     end
+
   end
 
   # GET /todos/new
@@ -35,6 +41,12 @@ class TodosController < ApplicationController
   # GET /todos/1/edit
   def edit
     @todo = Todo.find(params[:id])
+    if @todo.user.id == current_user.id
+      @todo
+    else
+      @todo = nil
+      redirect_to root_path
+    end
   end
 
   # POST /todos

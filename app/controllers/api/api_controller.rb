@@ -4,19 +4,10 @@ class Api::ApiController < ApplicationController
   before_filter :authorize 
   
   respond_to :json
-  # def list_todos
-  #   course_request = @user.enrollment_requests.find params[:id]    
-  #   if params[:accept] == true
-  #     course_request.accept!
-  #   else
-  #     course_request.reject!
-  #   end    
-  #   render :json => {:success => true}, :callback => params[:callback]    
-  # end
 
   def list_todos
     todos = @user.todos.order('deadline ASC')
-    render :json => {:todos => todos.as_json(:include => [:user])}, :callback => params[:callback]
+    render :json => {:todos => todos.as_json(:include => [:user]), :count => todos.count}, :callback => params[:callback]
   end
 
   def add_todo

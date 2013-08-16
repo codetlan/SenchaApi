@@ -25,13 +25,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#"><%= image_tag("sencha.png", :size => "16x16")%> Sencha Api</a>
+          <a class="brand" href="/"><%= image_tag("sencha.png", :size => "16x16")%> Sencha Api</a>
           <div class="container nav-collapse">
             <ul class="nav pull-right">
 
               <% if user_signed_in? %>
-                <li><%= link_to current_user.email, edit_user_registration_path %></li>
-                <li><%= link_to "Salir", destroy_user_session_path, :method => :delete %></li>                
+                <li><%= link_to current_user.email, edit_user_registration_path, :class => 'btn btn-mini label label-important' %></li>
+                <li><%= link_to "Salir", destroy_user_session_path, :class => 'btn btn-mini label label-important',:method => :delete %></li>                
               <% else %>
                 <li><%= link_to "Entrar", new_user_session_path %></li>
                 <li><%= link_to "Registrarse", new_user_registration_path %> </li>

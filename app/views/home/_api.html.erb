@@ -1,5 +1,18 @@
-<div class="row">
-	<h3>Estos son tus datos de inicio en el API</h3>
-	<div><b>Email</b> : <%= current_user.email %></div>
-	<div><b>Token</b> : <%= current_user.authentication_token %></div>
+<div class="api-container">
+  <div class="instructions well">
+    <h1>API</h1>
+    <div class="well"><b class="label label-info">Email</b> : <%= current_user.email %></div>
+    <div class="well">
+      <% if current_user.authentication_token.blank? %>      
+        <span>Para generar tu token debes de conectarte mediante jsonp <br>
+        <a href="http://api.codetlan.com/api/tokens/create.json?email=?&password=?&callback=Ext.data.JsonP.callback2">http://api.codetlan.com/api/tokens/create.json?email=your_email&password=yourpassword</a></span>   
+      <% else %>
+          <b class="label label-info">Token</b> : <%= current_user.authentication_token %>
+      <% end %>
+    </div>
+    <div class="well"><%= link_to "API Documentation", show_api_path , :class => 'btn btn-large btn-block btn-primary'%></div>
+    <div class="well"><%= link_to "Working Example", 'http://codetlan.com/todos/' , :class => 'btn btn-large btn-block btn-success'%></div>
+    <div class="well"><%= link_to "Download Example", 'https://github.com/manduks/todos' , :class => 'btn btn-large btn-block'%></div>
+    <div class="well"><%= link_to "Create Todos here!", todos_path , :class => 'btn btn-large btn-inverse btn-block'%></div>
+  </div>
 </div>
