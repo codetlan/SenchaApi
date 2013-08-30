@@ -4,7 +4,8 @@
 body{
 	margin-top:60px;
 	// background: url('http://cdn.sencha.io/img/home/december-2012/20121218-bg.jpg');
-	background:#085C88;
+	background:url('/assets/header-bg.jpg');
+	// background:#085C88;
 	color:#FFF;
 }
 footer{
@@ -23,7 +24,7 @@ footer{
 }
 .content{
 	color: white;
-	font-size: 24px;
+	font-size: 18px;
 	float: left;
 	margin: 45px 0px 0px 10px;
 	text-shadow: none;
@@ -31,6 +32,9 @@ footer{
 	float: left;
 	font-family: "klavika-web",sans-serif;
 	font-weight: 200 !important;
+	background: rgba(0, 0, 0, 0.5);
+	border-radius:8px;
+	padding:10px;
 }
 .modulos{
 	li{
