@@ -60,5 +60,14 @@ module SenchaApi
     config.assets.version = '1.0'
     #devise
     config.assets.initialize_on_precompile = false
+
+    # para CORS
+
+    config.middleware.use Rack::Cors do
+      allow do
+        origins '*'
+        resource '*', :headers => :any, :methods => [:get, :post, :options]
+      end
+    end
   end
 end

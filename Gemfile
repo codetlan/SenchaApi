@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.11'
 gem 'heroku'
 
+gem 'rack-cors', :require => 'rack/cors'
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
